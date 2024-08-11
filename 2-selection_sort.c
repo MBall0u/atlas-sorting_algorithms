@@ -11,10 +11,10 @@
 */
 void selection_sort(int *array, size_t size)
 {
-	size_t pos, pos_l = 0, pos_h = size - 1, hold = 0;
+	size_t pos, pos_l = 0, hold = 0;
 	int temp, check = 1;
 
-	while (check != 0 && pos_l != pos_h)
+	while (check != 0 && pos_l < size)
 	{
 		check = 0;
 		hold = pos_l;
