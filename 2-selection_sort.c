@@ -14,10 +14,8 @@ void selection_sort(int *array, size_t size)
 	size_t pos, pos_l, pos_h = size - 1, hold = 0;
 	int temp, check = 1;
 
-	for (pos_l = 0; pos_l != pos_h; pos_l++)
+	while (check != 0 && pos_l != pos_h)
 	{
-		if (check == 0)
-			break;
 		check = 0;
 		hold = pos_l;
 		for (pos = pos_l; pos < size; pos++)
@@ -32,5 +30,6 @@ void selection_sort(int *array, size_t size)
 		array[pos_l] = array[hold];
 		array[hold] = temp;
 		print_array(array, size);
+		pos_l++;
 	}
 }
