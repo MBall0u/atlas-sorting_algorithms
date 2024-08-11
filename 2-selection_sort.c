@@ -16,22 +16,21 @@ void selection_sort(int *array, size_t size)
 
 	for (pos_l = 0; pos_l != pos_h; pos_l++)
 	{
-		while (check != 0)
+		if (check == 0)
+			break;
+		check = 0;
+		hold = pos_l;
+		for (pos = pos_l; pos < size; pos++)
 		{
-			check = 0;
-			hold = pos_l;
-			for (pos = pos_l; pos < size; pos++)
+			if (array[pos] < array[hold])
 			{
-				if (array[pos] < array[hold])
-				{
-					hold = pos;
-					check++;
-				}
+				hold = pos;
+				check++;
 			}
-			temp = array[pos_l];
-			array[pos_l] = array[hold];
-			array[hold] = temp;
-			print_array(array, size);
 		}
+		temp = array[pos_l];
+		array[pos_l] = array[hold];
+		array[hold] = temp;
+		print_array(array, size);
 	}
 }
