@@ -12,19 +12,15 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t pos, pos_l = 0, hold = 0;
-	int temp, check = 1;
+	int temp;
 
-	while (check != 0 && pos_l < size)
+	while (pos_l < size)
 	{
-		check = 0;
 		hold = pos_l;
-		for (pos = pos_l; pos < size; pos++)
+		for (pos = pos_l + 1; pos < size; pos++)
 		{
 			if (array[pos] < array[hold])
-			{
 				hold = pos;
-				check++;
-			}
 		}
 		temp = array[pos_l];
 		array[pos_l] = array[hold];
